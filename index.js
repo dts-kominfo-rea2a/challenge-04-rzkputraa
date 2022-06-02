@@ -8,7 +8,11 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (date, orders = NaN) => {
+  let newDate = [];
+  date.map((item) => newDate.push(Date.parse(item) / 1000));
+  return !isNaN(orders) ? newDate[orders].toString() : newDate.sort().join("-");
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
